@@ -15,7 +15,7 @@ export const NavLogo = () => {
         alt="logo"
         width={50}
         height={50}
-        className="h-12 w-12 rounded-full"
+        className="md:h-12 md:w-12 h-10 w-10 rounded-full"
       />
     </Link>
   );
