@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 // @ts-ignore
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { NavBar } from "@/components/nav-bar";
+import { NavBar } from "@/components/navbar/nav-bar";
 import { inter, poppins } from "@/lib/font";
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function RootLayout({
           {/* navbar for the site */}
 
           {/* main content */}
-          <main className="relative mx-auto max-w-5xl">
+          <main className="relative mx-auto max-w-4xl">
             <NavBar />
             <div className="px-6 md:px-14">{children}</div>
           </main>
