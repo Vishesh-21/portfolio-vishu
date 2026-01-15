@@ -9,12 +9,7 @@ export function SubHeading({
   className?: string;
 }) {
   return (
-    <p
-      className={cn(
-        "text-muted-foreground text-sm tracking-wide select-none",
-        className,
-      )}
-    >
+    <p className={cn("text-muted-foreground text-sm select-none", className)}>
       {children}
     </p>
   );

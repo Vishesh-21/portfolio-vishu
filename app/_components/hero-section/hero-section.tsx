@@ -31,7 +31,7 @@ export const HeroSection = () => {
 
 export function AboutMe() {
   return (
-    <MotionSubHeading className="text-md tracking-normal md:w-lg">
+    <MotionSubHeading className="text-md tracking-normal md:w-lg font-normal">
       I’m a full-stack developer specializing in modern web technologies like{" "}
       <span className="bg-slate-500 px-2 py-1 text-white">Next.js, React</span>{" "}
       and <span className="bg-slate-500 px-2 py-1 text-white">Node.js</span>. I

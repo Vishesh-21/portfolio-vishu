@@ -55,12 +55,12 @@ const NavItem = ({
           transition={{
             type: "spring",
             stiffness: 500,
-            damping: 20,
+            damping: 30,
           }}
         />
       )}
 
-      <Icon className="relative z-10 h-4 w-4 transition-transform group-hover:scale-110" />
+      <Icon className="relative z-10 h-4 w-4 transition-transform " />
       <span className="relative z-10 hidden sm:inline">{title}</span>
     </Link>
   );
