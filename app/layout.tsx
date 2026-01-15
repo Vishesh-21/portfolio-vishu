@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NavBar } from "@/components/navbar/nav-bar";
 import { inter, poppins } from "@/lib/font";
+import { Footer } from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${poppins.variable} mx-auto max-w-4xl antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -25,11 +28,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {/* navbar for the site */}
-
+          <NavBar />
           {/* main content */}
-          <main className="relative mx-auto max-w-4xl">
-            <NavBar />
-            <div className="px-6 md:px-14">{children}</div>
+          <main className="px-6 md:px-14">
+            {children}
+            {/* footer for the site */}
+            <Footer />
           </main>
         </ThemeProvider>
       </body>
