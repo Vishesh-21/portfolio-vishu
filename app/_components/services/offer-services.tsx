@@ -13,8 +13,8 @@ const OfferServices = () => {
         className="grid w-full gap-2 sm:grid-cols-1 md:grid-cols-5"
         initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       >
         <ServicesIntro />
         {servicesData.map((service, index) => (
@@ -31,7 +31,7 @@ export default OfferServices;
 function ServicesIntro() {
   return (
     <motion.div
-      className="col-span-2 px-6 py-14 md:col-span-3"
+      className="col-span-2 px-6 md:py-14 py-6 md:col-span-3"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.4 }}

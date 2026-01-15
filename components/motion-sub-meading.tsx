@@ -1,16 +1,13 @@
 "use client";
-
-import Heading from "@/components/heading";
 import { motion } from "motion/react";
+import { SubHeading } from "./sub-heading";
 
-export const MotionHeading = ({
+export const MotionSubHeading = ({
   children,
   className,
-  as = "h1",
 }: {
   children: string;
   className?: string;
-  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" ;
 }) => {
   return (
     <motion.div
@@ -19,9 +16,7 @@ export const MotionHeading = ({
       viewport={{ once: true, amount: 0.6 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <Heading as={as} className={className}>
-        {children}
-      </Heading>
+      <SubHeading className={className}>{children}</SubHeading>
     </motion.div>
   );
 };
