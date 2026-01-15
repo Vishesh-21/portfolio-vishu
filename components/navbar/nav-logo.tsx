@@ -10,13 +10,15 @@ export const NavLogo = () => {
 
   return (
     <Link href="/">
-      <Image
-        src={`/logo-${theme !== "dark" ? "light" : "dark"}.png`}
-        alt="logo"
-        width={50}
-        height={50}
-        className="md:h-12 md:w-12 h-10 w-10 rounded-full"
-      />
+      {theme && (
+        <Image
+          src={`/logo-${theme !== "dark" ? "light" : "dark"}.png`}
+          alt="logo"
+          width={50}
+          height={50}
+          className="h-10 w-10 rounded-full md:h-12 md:w-12"
+        />
+      )}
     </Link>
   );
 };

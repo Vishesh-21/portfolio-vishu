@@ -1,7 +1,10 @@
+import ServicesPage from "./_components/services/service-container";
+
 const HomePage = () => {
   return (
-    <div className="h-screen">
-      <h1 className="text-3xl font-bold">Hello world</h1>
+    <div className="min-h-screen">
+      <div className="h-screen"></div>
+      <ServicesPage />
     </div>
   );
 };
