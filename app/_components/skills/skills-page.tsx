@@ -1,7 +1,7 @@
 import { MotionHeading } from "@/components/motion-heading";
 import Container from "../container";
 import { Skills } from "./skills-component";
-import { MotionSubHeading } from "@/components/motion-sub-meading";
+import { MotionSubHeading } from "@/components/motion-sub-heading";
 
 export const SkillsPage = () => {
   return (

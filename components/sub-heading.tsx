@@ -5,7 +5,7 @@ export function SubHeading({
   children,
   className,
 }: {
-  children: string;
+  children: string | React.ReactNode;
   className?: string;
 }) {
   return (

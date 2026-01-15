@@ -5,6 +5,7 @@ import { ServicesData, servicesData } from "./services-data";
 import { motion, useMotionValue, useSpring } from "motion/react";
 import Heading from "@/components/heading";
 import { SubHeading } from "@/components/sub-heading";
+import { GlowLine } from "@/components/glow-line";
 
 const OfferServices = () => {
   return (
@@ -139,16 +140,7 @@ function ServiceCard({
   );
 }
 
-function GlowLine({ className }: { className: string }) {
-  return (
-    <span
-      className={cn(
-        "via-primary/60 absolute h-px w-1/2 bg-linear-to-r from-transparent to-transparent",
-        className,
-      )}
-    />
-  );
-}
+
 
 function HoverBackGround({
   x,
