@@ -10,8 +10,7 @@ export const UI: string[] = [
 export const server: string[] = [
   "Node.js",
   "Express.js",
-  "SQL",
-  "NonSQL",
+  "SQL & NoSQL",
   "Redis",
   "Nginx",
   "AWS",
