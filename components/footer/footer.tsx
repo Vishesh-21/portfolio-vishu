@@ -37,7 +37,7 @@ export default function Footer({ className }: { className?: string }) {
           className="pb-8"
         >
           {/* Divider */}
-          <div className="bg-border my-8 h-px w-full" />
+          <div className="bg-border my-6 h-px w-full" />
 
           {/* Bottom */}
           <BottomPart />
@@ -108,12 +108,12 @@ function LinkItem({
 // function bottom part of footer
 function BottomPart() {
   return (
-    <div className="text-muted-foreground flex flex-col-reverse items-start justify-center md:justify-between text-sm md:flex-row">
-      <div className="flex gap-2 md:flex-col flex-1">
+    <div className="text-muted-foreground flex flex-col-reverse items-center justify-center md:justify-between text-sm md:flex-row gap-2">
+      <div className="flex gap-3 flex-col flex-1 ">
         <SubHeading className="tracking-normal">
           Built with Next.js · Tailwind · Motion
         </SubHeading>
-        <SubHeading className="tracking-normal">
+        <SubHeading className="tracking-normal md:mx-0 mx-auto">
           &copy; {new Date().getFullYear()} Vishesh Verma
         </SubHeading>
       </div>
