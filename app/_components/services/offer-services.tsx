@@ -1,11 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { ServicesData, servicesData } from "./services-data";
-import { motion, useMotionValue, useSpring } from "motion/react";
+import { motion } from "motion/react";
 import Heading from "@/components/heading";
 import { SubHeading } from "@/components/sub-heading";
-import { GlowLine } from "@/components/glow-line";
 
 const OfferServices = () => {
   return (
@@ -32,7 +30,7 @@ export default OfferServices;
 function ServicesIntro() {
   return (
     <motion.div
-      className="col-span-2 px-6 md:py-14 py-6 md:col-span-3"
+      className="col-span-2 px-6 py-6 md:col-span-3 md:py-14"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.4 }}
@@ -84,28 +82,21 @@ function ServicesIntro() {
 }
 
 //service card
+import { useMouseGlow } from "@/hooks/useMouseGlow";
+import { MouseGlow } from "@/components/mouse-glow";
+import { AnimatedCard } from "@/components/animated-border";
+
 function ServiceCard({
   title,
   Icon,
   description,
   index,
 }: ServicesData & { index: number }) {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  // Smooth the movement
-  const x = useSpring(mouseX, { stiffness: 120, damping: 35 });
-  const y = useSpring(mouseY, { stiffness: 120, damping: 35 });
-
-  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
-    const rect = e.currentTarget.getBoundingClientRect();
-
-    mouseX.set(e.clientX - rect.left - rect.width / 2);
-    mouseY.set(e.clientY - rect.top - rect.height / 2);
-  }
+  const { x, y, handleMouseMove } = useMouseGlow();
 
   return (
-    <motion.div
+    <AnimatedCard
+      onMouseMove={handleMouseMove}
       initial={{ y: 50, opacity: 0.8, filter: "blur(8px)" }}
       whileInView={{
         y: 0,
@@ -118,8 +109,7 @@ function ServiceCard({
         },
       }}
       viewport={{ once: true }}
-      onMouseMove={handleMouseMove}
-      className={`bg-background/60 relative w-full overflow-hidden rounded-xl border border-slate-600/50 p-14 px-6 shadow-lg dark:shadow-sm ${
+      className={`p-14 px-6 ${
         index === 2 || index === 3 ? "md:col-span-3" : "col-span-2"
       } col-span-2`}
     >
@@ -130,45 +120,7 @@ function ServiceCard({
       </Heading>
       <SubHeading>{description}</SubHeading>
 
-      {/* Glow lines */}
-      <GlowLine className="top-10 left-0 h-1/2 w-px bg-linear-to-b" />
-      <GlowLine className="right-10 bottom-0" />
-
-      {/* Hover background (FOLLOW MOUSE) */}
-      <HoverBackGround x={x} y={y} />
-    </motion.div>
-  );
-}
-
-
-
-function HoverBackGround({
-  x,
-  y,
-  className,
-}: {
-  x: any;
-  y: any;
-  className?: string;
-}) {
-  return (
-    <motion.span
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 0, scale: 0.8 }}
-      whileHover={{ opacity: 0.3, scale: 1 }}
-      transition={{
-        type: "spring",
-        stiffness: 120,
-        damping: 20,
-      }}
-      style={{
-        x,
-        y,
-      }}
-      className={cn(
-        "absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-tl from-orange-600/70 to-green-500/70 blur-3xl dark:from-blue-300 dark:via-orange-200/50 dark:to-green-300",
-        className,
-      )}
-    />
+      <MouseGlow x={x} y={y} />
+    </AnimatedCard>
   );
 }
