@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "../container";
+import Container from "../../../components/container";
 import { MotionHeading } from "@/components/motion-heading";
 import { MotionSubHeading } from "@/components/motion-sub-heading";
 import { ExperienceInSights } from "./experence-insight";

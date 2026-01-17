@@ -1,4 +1,4 @@
-import Container from "../container";
+import Container from "../../../components/container";
 import OfferServices from "./offer-services";
 import { MotionHeading } from "@/components/motion-heading";
 

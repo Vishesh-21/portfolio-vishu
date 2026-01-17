@@ -22,11 +22,11 @@ function ExperienceCard({
 }: ExperienceData) {
   return (
     <div className="mt-4">
-      <MotionHeading as="h5" className="flex items-center gap-1">
+      <MotionHeading as="h5" className="flex items-center gap-2">
         <CircleCheck className="h-5 w-5" />
         {role}
       </MotionHeading>
-      <div className="md:ml-4  mt-2">
+      <div className="md:ml-4  mt-1">
         <MotionHeading
           as="h6"
           className="text-muted-foreground text-shadow-none"
@@ -37,7 +37,7 @@ function ExperienceCard({
         <div className="md:ml-2 ml-0 mt-2">
           {description.map((item, index) => {
             return (
-              <MotionSubHeading className="w-full">
+              <MotionSubHeading key={index} className="w-full">
                 <Fan className="text-background fill-primary h-5 w-5 inline mr-1" />
                 {item}
               </MotionSubHeading>

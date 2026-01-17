@@ -1,5 +1,5 @@
 import { MotionHeading } from "@/components/motion-heading";
-import Container from "../container";
+import Container from "../../../components/container";
 import { MotionSubHeading } from "@/components/motion-sub-heading";
 import { Skills } from "./skills-component";
 

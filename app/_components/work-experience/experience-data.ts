@@ -7,7 +7,7 @@ export interface ExperienceData {
 
 export const experience: ExperienceData[] = [
   {
-    role: "Full Stack Development Intern",
+    role: "Full Stack Developer Intern",
     company: "Bunch Infotech",
     period: "June 2025 - September 2025",
     description: [

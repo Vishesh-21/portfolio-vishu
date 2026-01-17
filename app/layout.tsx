@@ -4,8 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NavBar } from "@/components/navbar/nav-bar";
 import { inter, poppins } from "@/lib/font";
-import { Footer } from "@/components/footer/footer";
 import { metadata } from "@/lib/metadata";
+import Footer from "@/components/footer/footer";
 
 export { metadata };
 
