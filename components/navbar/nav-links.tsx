@@ -9,7 +9,7 @@ export const NavLinks = ({ navItems }: { navItems: navItemsProps[] }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <ul className="relative flex items-center gap-2">
+    <ul className="relative flex items-center ">
       {navItems.map(({ title, href, Icon }, index) => (
         <NavItem
           key={title}
@@ -44,18 +44,18 @@ const NavItem = ({
   return (
     <Link
       href={href}
-      className="group text-muted-foreground hover:text-foreground/90 focus-visible:ring-ring relative flex items-center gap-2 rounded-full px-3 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:outline-none"
+      className="group text-muted-foreground hover:text-foreground/90 focus-visible:ring-ring relative flex items-center gap-2 px-3 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:outline-none"
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
     >
       {hoveredIndex === index && (
         <motion.span
           layoutId="hovered-span"
-          className="absolute inset-0 rounded-full bg-neutral-100 dark:bg-neutral-800"
+          className="absolute inset-0 rounded-full bg-neutral-100 pointer-events-none dark:bg-neutral-800"
           transition={{
             type: "spring",
             stiffness: 500,
-            damping: 30,
+            damping: 35,
           }}
         />
       )}

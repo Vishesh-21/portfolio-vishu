@@ -8,9 +8,9 @@ export const MotionHeading = ({
   className,
   as = "h1",
 }: {
-  children: string;
+  children: string | React.ReactNode;
   className?: string;
-  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" ;
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }) => {
   return (
     <motion.div

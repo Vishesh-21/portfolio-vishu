@@ -55,20 +55,4 @@ function LineEffect() {
   );
 }
 
-//badge
-export function Badge() {
-  return (
-    <motion.span
-      initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="border-border bg-background/60 text-muted-foreground relative mt-1 mb-4 inline-block rounded-full border px-4 py-1 text-sm font-semibold backdrop-blur-xl select-none md:mb-6"
-    >
-      Full-Stack Developer · <span className="text-primary">Next.js</span> ·
-      AI-Aware
-      <GlowLine className="via-muted-foreground/50 top-0 left-5 w-1/2 bg-linear-to-r from-transparent to-transparent" />
-      <GlowLine className="via-muted-foreground/50 right-5 bottom-0 w-1/2 bg-linear-to-r from-transparent to-transparent" />
-    </motion.span>
-  );
-}
+
