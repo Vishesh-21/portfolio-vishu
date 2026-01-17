@@ -21,7 +21,7 @@ function SkillSectionHeading() {
           Competencies
         </MotionHeading>
       </div>
-      <MotionSubHeading className="mt-4 md:w-2xl">
+      <MotionSubHeading className="mt-2 md:w-2xl">
         A snapshot of my technical strengths, covering frontend development,
         backend fundamentals, tooling, and modern development workflows.
       </MotionSubHeading>

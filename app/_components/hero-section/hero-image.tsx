@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 export function HeroImage() {
   return (
     <motion.div
-      className="relative w-1/3 px-1 py-4 md:w-full md:px-10 md:py-6"
+      className="relative w-45 px-1 py-4 md:w-[80%] md:px-10 md:py-6"
       style={{ perspective: 1000 }} // critical for 3D depth
       initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}

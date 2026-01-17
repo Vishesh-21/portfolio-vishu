@@ -7,7 +7,7 @@ const Container = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return <div className={cn(" md:mt-24 mt-16", className)}>{children}</div>;
+  return <section className={cn(" md:mt-24 mt-16 ", className)}>{children}</section>;
 };
 
 export default Container;

@@ -6,9 +6,9 @@ import GitHubStats from "./github-stats";
 
 export const HeroSection = () => {
   return (
-    <Container className="py-6 mt-0 relative md:mt-0 md:py-16">
+    <Container className="pt-24 mt-0 relative md:mt-0 md:py-16">
       <div className="flex h-full w-full flex-col-reverse justify-between md:flex-row">
-        <div>
+        <div className="md:mt-0 mt-4">
           {/* intro  */}
           <Intro />
           {/* about me  */}
@@ -33,17 +33,15 @@ const Intro = () => (
     <MotionHeading as="h2" className="tracking-tighter">
       Vishesh Verma
     </MotionHeading>
-    <MotionHeading as="h5" className="mb-4 font-normal">
-      Full-Stack Developer ·{" "}
-      <span className="text-muted-foreground">Next.js</span> ·{" "}
-      <span className="text-primary">AI-Aware</span>
+    <MotionHeading as="h5" className="mb-4 font-normal text-muted-foreground text-shadow-none">
+      Full-Stack Developer & AI Enthusiast
     </MotionHeading>
   </div>
 );
 
 export function AboutMe() {
   return (
-    <MotionSubHeading className="text-md text-muted-foreground/70 bg-background/60 relative overflow-hidden rounded-sm border border-slate-600/50 p-4 text-justify font-normal tracking-normal shadow-sm md:w-lg">
+    <MotionSubHeading className="">
       <AboutContent />
     </MotionSubHeading>
   );

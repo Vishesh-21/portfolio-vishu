@@ -1,5 +1,5 @@
 "use client";
-import { Home, FileBracesCorner, Github, Linkedin } from "lucide-react";
+import { Home, FileBracesCorner, Github, Linkedin, Earth } from "lucide-react";
 import { ToggleModeButton } from "../toggle-theme";
 import { NavLinks } from "./nav-links";
 import { NavLogo } from "./nav-logo";
@@ -23,6 +23,11 @@ export const NavBar = () => {
       title: "Projects",
       href: "#projects",
       Icon: FileBracesCorner,
+    },
+    {
+      title : "Blog",
+      href : "#blog",
+      Icon : Earth
     },
     {
       title: "GitHub",

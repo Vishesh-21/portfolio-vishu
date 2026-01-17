@@ -9,7 +9,7 @@ export default async function GitHubStats() {
   const experience = "+1";
 
   return (
-    <section className="mt-6 px-4 md:mt-20">
+    <section className="px-4 md:mt-20 mt-18">
       <div className="flex items-center gap-10">
         {/* Years of experience  */}
         <div>
@@ -32,9 +32,9 @@ export default async function GitHubStats() {
         </div>
 
         <div>
-          <MotionSubHeading className="hover:text-foreground duration-3ll font-semibold transition-all">
+          <MotionSubHeading className="hover:text-foreground duration-300 font-normal transition-all">
             <Link href={"https://github.com/Vishesh-21"} target="blank">
-              Check More Projects <CornerRightUpIcon className="inline" />
+              Check Projects <CornerRightUpIcon className="inline" />
             </Link>
           </MotionSubHeading>
         </div>
