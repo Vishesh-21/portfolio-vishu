@@ -5,7 +5,7 @@ import { HeroImage } from "./hero-image";
 
 export const HeroSection = () => {
   return (
-    <Container className="mt-0 py-10 md:mt-0 md:py-16">
+    <Container className="mt-0 py-10 md:mt-0 md:py-16 min-h-screen">
       <div className="flex h-full w-full flex-col-reverse justify-between md:flex-row">
         <div >
           {/* intro  */}

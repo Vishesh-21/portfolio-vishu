@@ -1,11 +1,11 @@
 import { MotionHeading } from "@/components/motion-heading";
 import Container from "../container";
-import { Skills } from "./skills-component";
 import { MotionSubHeading } from "@/components/motion-sub-heading";
+import { Skills } from "./skills-component";
 
 export const SkillsPage = () => {
   return (
-    <Container>
+    <Container className="">
       <SkillSectionHeading />
       <Skills className="mt-8" />
     </Container>
@@ -16,8 +16,8 @@ function SkillSectionHeading() {
   return (
     <>
       <div className="flex gap-2">
-        <MotionHeading as="h2">Core</MotionHeading>
-        <MotionHeading as="h2" className="text-muted-foreground">
+        <MotionHeading as="h2" className="tracking-tighter">Core</MotionHeading>
+        <MotionHeading as="h2" className="text-muted-foreground tracking-tighter">
           Competencies
         </MotionHeading>
       </div>

@@ -20,7 +20,7 @@ const Heading = ({ as: Tag = "h1", children, className }: HeadingProps) => {
   return (
     <Tag
       className={cn(
-        "text-foreground font-semibold tracking-tight select-none",
+        "text-foreground text-shadow-xs font-semibold tracking-tight select-none",
         sizeMap[Tag],
         className,
       )}

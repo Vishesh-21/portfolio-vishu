@@ -7,7 +7,7 @@ const Container = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return <div className={cn("min-h-screen md:mt-24 mt-16", className)}>{children}</div>;
+  return <div className={cn(" md:mt-24 mt-16", className)}>{children}</div>;
 };
 
 export default Container;

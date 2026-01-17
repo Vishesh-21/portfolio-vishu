@@ -1,4 +1,4 @@
-export const UI: string[] = [
+const UI: string[] = [
   "React",
   "Next.js",
   "Typescript",
@@ -7,7 +7,7 @@ export const UI: string[] = [
   "Motion",
 ];
 
-export const server: string[] = [
+const server: string[] = [
   "Node.js",
   "Express.js",
   "SQL & NoSQL",
@@ -16,7 +16,7 @@ export const server: string[] = [
   "AWS",
 ];
 
-export const tools: string[] = [
+const tools: string[] = [
   "Git & GitHub",
   "Linux",
   "Docker",
@@ -24,3 +24,20 @@ export const tools: string[] = [
   "LangChain",
   "LangGraph",
 ];
+
+const frontend = {
+  name: "Frontend tech",
+  data: UI,
+};
+
+const backend = {
+  name: "Server & Database",
+  data: server,
+};
+
+const tool = {
+  name: "DevOps & Tools",
+  data: tools,
+};
+
+export { frontend, backend, tool };

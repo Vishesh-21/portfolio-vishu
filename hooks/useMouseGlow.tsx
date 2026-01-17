@@ -6,8 +6,8 @@ export function useMouseGlow() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const x = useSpring(mouseX, { stiffness: 120, damping: 35 });
-  const y = useSpring(mouseY, { stiffness: 120, damping: 35 });
+  const x = useSpring(mouseX, { stiffness: 400, damping: 35 });
+  const y = useSpring(mouseY, { stiffness: 400, damping: 35 });
 
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
     const rect = e.currentTarget.getBoundingClientRect();

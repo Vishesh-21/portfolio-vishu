@@ -104,7 +104,7 @@ function ServiceCard({
         filter: "blur(0px)",
         transition: {
           duration: 0.2,
-          delay: index * 0.13,
+          delay: index * 0.05,
           ease: "easeInOut",
         },
       }}
