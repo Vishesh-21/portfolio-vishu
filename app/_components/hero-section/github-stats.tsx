@@ -4,13 +4,12 @@ import { getPublicRepoCount } from "@/lib/github";
 import { CornerRightUpIcon } from "lucide-react";
 import Link from "next/link";
 
-const experience = "+1"
-
 export default async function GitHubStats() {
   const repoCount = await getPublicRepoCount();
+  const experience = "+1";
 
   return (
-    <section className="px-4 md:mt-22 mt-6">
+    <section className="mt-6 px-4 md:mt-20">
       <div className="flex items-center gap-10">
         {/* Years of experience  */}
         <div>
@@ -33,9 +32,9 @@ export default async function GitHubStats() {
         </div>
 
         <div>
-          <MotionSubHeading className="hover:text-foreground font-semibold transition-all duration-3ll">
-            <Link href={"https://github.com/Vishesh-21"} target="blank" >
-              Check More Projects <CornerRightUpIcon className="inline"/>
+          <MotionSubHeading className="hover:text-foreground duration-3ll font-semibold transition-all">
+            <Link href={"https://github.com/Vishesh-21"} target="blank">
+              Check More Projects <CornerRightUpIcon className="inline" />
             </Link>
           </MotionSubHeading>
         </div>
