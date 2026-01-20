@@ -28,11 +28,7 @@ export default function RootLayout({
           {/* navbar for the site */}
           <NavBar />
           {/* main content */}
-          <main className="px-6 md:px-14">
-            {children}
-            {/* footer for the site */}
-            <Footer />
-          </main>
+          <main className="px-6 md:px-14">{children}</main>
         </ThemeProvider>
       </body>
     </html>

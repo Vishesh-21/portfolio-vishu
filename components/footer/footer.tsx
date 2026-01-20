@@ -25,7 +25,7 @@ const footerLinks = [
 
 export default function Footer({ className }: { className?: string }) {
   return (
-    <Container>
+    <Container className="md:mt-0 mt-0">
       <footer
         className={cn("bg-background/60 relative backdrop-blur-xl", className)}
       >
@@ -37,7 +37,7 @@ export default function Footer({ className }: { className?: string }) {
           className="pb-8"
         >
           {/* Divider */}
-          <div className="bg-border my-6 h-px w-full" />
+          <div className="bg-border mb-8 h-px w-full" />
 
           {/* Bottom */}
           <BottomPart />

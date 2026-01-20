@@ -140,3 +140,21 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+@layer utilities {
+  .input-underline {
+    @apply border-foreground focus-visible:border-primary rounded-none border-0 border-b-[1.5px] bg-transparent px-0 py-2 shadow-none transition-all duration-150 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none dark:bg-transparent;
+  }
+}
+
+/* Remove autofill background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  -webkit-text-fill-color: currentColor;
+  transition: background-color 9999s ease-in-out 0s;
+}

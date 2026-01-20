@@ -1,3 +1,4 @@
+import { ContactPage } from "./_components/contact/contact-page";
 import { HeroSection } from "./_components/hero-section/hero-section";
 import ServicesPage from "./_components/services/services-page";
 import { SkillsPage } from "./_components/skills/skills-page";
@@ -10,6 +11,7 @@ const HomePage = () => {
       <ExperiencePage />
       <SkillsPage />
       <ServicesPage />
+      <ContactPage />
     </div>
   );
 };
