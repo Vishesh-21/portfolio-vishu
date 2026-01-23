@@ -6,7 +6,7 @@ import { ExperienceInSights } from "./experence-insight";
 
 export const ExperiencePage = () => {
   return (
-    <Container className="md:mt-8">
+    <Container>
       <MotionHeading as="h2">
         Track <span className="text-muted-foreground">Record</span>
       </MotionHeading>

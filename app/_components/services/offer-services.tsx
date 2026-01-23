@@ -118,7 +118,7 @@ function ServiceCard({
       <Heading as="h5" className="mb-2">
         {title}
       </Heading>
-      <SubHeading>{description}</SubHeading>
+      <SubHeading className="text-[0.9rem]">{description}</SubHeading>
 
       <MouseGlow x={x} y={y} />
     </AnimatedCard>
