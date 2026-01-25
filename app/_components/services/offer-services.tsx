@@ -109,7 +109,7 @@ function ServiceCard({
         },
       }}
       viewport={{ once: true }}
-      className={`md:py-14 py-8 px-6 ${
+      className={`md:py-14 py-8 px-6 shadow-md ${
         index === 2 || index === 3 ? "md:col-span-3" : "col-span-2"
       } col-span-2`}
     >
@@ -118,7 +118,7 @@ function ServiceCard({
       <Heading as="h5" className="mb-2">
         {title}
       </Heading>
-      <SubHeading>{description}</SubHeading>
+      <SubHeading className="text-[0.9rem]">{description}</SubHeading>
 
       <MouseGlow x={x} y={y} />
     </AnimatedCard>

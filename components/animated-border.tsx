@@ -16,7 +16,7 @@ export function AnimatedCard({
     <motion.div
       {...props}
       className={cn(
-        "bg-background/60 relative overflow-hidden rounded-xl border border-slate-600/50 shadow-md dark:shadow-sm",
+        "bg-background/60 relative overflow-hidden rounded-xl border border-slate-600/10 shadow-xs transition-all duration-300 dark:border-slate-50/10 dark:shadow-sm",
         className,
       )}
     >

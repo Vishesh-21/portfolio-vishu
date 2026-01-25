@@ -4,7 +4,6 @@ import { motion } from "motion/react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-import { once } from "events";
 
 interface FormFieldProps {
   field: {
@@ -41,10 +40,10 @@ export const FormField = ({ field, index }: FormFieldProps) => {
           color: isActive ? "hsl(var(--background))" : "hsl(var(--primary))",
         }}
         transition={{ duration: 0.2, ease: "easeOut" }}
-        className="text-muted-foreground pointer-events-none absolute top-2 left-0 origin-left text-sm"
+        className="text-muted-foreground pointer-events-none absolute top-2 left-0 origin-left text-sm tracking-wide"
       >
         {label}
-        {required && <span className="text-primary"> *</span>}
+        {required && <span className="text-primary">*</span>}
       </motion.label>
 
       {/* Input / Textarea */}
@@ -56,7 +55,7 @@ export const FormField = ({ field, index }: FormFieldProps) => {
           rows={rows ?? 4}
           onFocus={() => setIsFocused(true)}
           onBlur={(e) => setIsFocused(!!e.target.value)}
-          className="input-underline h-32 resize-none pt-6"
+          className="input-underline h-32 resize-none pt-6 tracking-wide"
         />
       ) : (
         <Input
