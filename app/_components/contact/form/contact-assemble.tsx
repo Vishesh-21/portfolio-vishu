@@ -7,13 +7,13 @@ import { motion } from "motion/react";
 export const ContactForm = () => {
   return (
     <motion.div
-      className="relative my-4 rounded-xl md:pb-6 overflow-hidden"
+      className="relative"
       initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      <div className="flex flex-col-reverse gap-10 overflow-hidden rounded-xl md:flex-row">
+      <div className="flex flex-col-reverse gap-10 md:flex-row">
         <Social />
         <Form />
       </div>
