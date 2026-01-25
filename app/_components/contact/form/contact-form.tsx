@@ -32,7 +32,7 @@ export function Form() {
       <Button
         disabled={pending}
         type="submit"
-        className="float-right my-8 w-full cursor-pointer rounded-none text-shadow-2xs"
+        className="float-right mt-8 w-full cursor-pointer rounded-none text-shadow-2xs"
       >
         {pending ? (
           <>
