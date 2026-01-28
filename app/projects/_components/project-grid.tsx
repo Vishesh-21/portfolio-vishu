@@ -1,10 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { ProjectData } from "../constant";
+import { ProjectData } from "./constant";
 import { ProjectCard } from "./project-card";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Github } from "lucide-react";
 
 export function ProjectsGrid({ projects }: { projects: ProjectData[] }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -18,7 +21,7 @@ export function ProjectsGrid({ projects }: { projects: ProjectData[] }) {
       {visibleProjects.map((project, index) => (
         <div
           className="relative p-4"
-          key={project.title}
+          key={`project-${project.title}-${index}`}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -36,6 +39,21 @@ export function ProjectsGrid({ projects }: { projects: ProjectData[] }) {
           )}
         </div>
       ))}
+
+      {!isHome && (
+        <div className="text-muted-foreground flex items-center justify-center p-10">
+          <Link
+            href={"https://github.com/Vishesh-21"}
+            target="_blank"
+            className=""
+          >
+            <Button variant={"ghost"} className="cursor-pointer">
+              <Github className="mr-1" />
+              <span>View More on GitHub</span>
+            </Button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

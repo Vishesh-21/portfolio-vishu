@@ -2,7 +2,7 @@
 
 import { ExternalLink, Github } from "lucide-react";
 import React from "react";
-import { ProjectData } from "../constant";
+import { ProjectData } from "../../../projects/_components/constant";
 import { MouseGlow } from "@/components/mouse-glow";
 import { AnimatedCard } from "@/components/animated-border";
 import { useMouseGlow } from "@/hooks/useMouseGlow";

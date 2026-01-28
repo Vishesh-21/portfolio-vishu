@@ -2,8 +2,8 @@ import Container from "@/components/container";
 import { MotionHeading } from "@/components/motion-heading";
 import { MotionSubHeading } from "@/components/motion-sub-heading";
 import React from "react";
-import { ProjectsGrid } from "../_components/projects/components/project-grid";
-import { projectsData } from "../_components/projects/constant";
+import { ProjectsGrid } from "./_components/project-grid";
+import { projectsData } from "./_components/constant";
 
 const ProjectPage = ({ children }: { children: React.ReactNode }) => {
   return (
