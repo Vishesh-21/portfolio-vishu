@@ -56,6 +56,60 @@ export const projectsData: ProjectData[] = [
     image: "/user.png",
   },
   {
+    title: "VisionAI – Personal Career Growth Assistant",
+    description:
+      "AI-powered career assistant to help users prepare for interviews and build resumes.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Gemini",
+      "Vercel",
+      "PostgreSQL",
+    ],
+    learning:
+      "Product thinking, AI feature design, user-centric development, PostgreSQL integration",
+    githubLink:
+      "https://github.com/Vishesh-21/VisionAI---Your-Personal-Career-Growth-Assistant",
+    image: "/user.png",
+  },
+  {
+    title: "VisionAI – Personal Career Growth Assistant",
+    description:
+      "AI-powered career assistant to help users prepare for interviews and build resumes.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Gemini",
+      "Vercel",
+      "PostgreSQL",
+    ],
+    learning:
+      "Product thinking, AI feature design, user-centric development, PostgreSQL integration",
+    githubLink:
+      "https://github.com/Vishesh-21/VisionAI---Your-Personal-Career-Growth-Assistant",
+    image: "/user.png",
+  },
+  {
+    title: "VisionAI – Personal Career Growth Assistant",
+    description:
+      "AI-powered career assistant to help users prepare for interviews and build resumes.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Gemini",
+      "Vercel",
+      "PostgreSQL",
+    ],
+    learning:
+      "Product thinking, AI feature design, user-centric development, PostgreSQL integration",
+    githubLink:
+      "https://github.com/Vishesh-21/VisionAI---Your-Personal-Career-Growth-Assistant",
+    image: "/user.png",
+  },
+  {
     title: "SQL Agent",
     description:
       "AI-driven SQL assistant that converts natural language queries into SQL statements.",

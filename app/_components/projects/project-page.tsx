@@ -35,7 +35,7 @@ function MoreButton() {
   return (
     <div className="text-center">
       <Link href="/projects" aria-label="See all projects">
-        <Button variant={"ghost"} className="relative group mx-auto mt-4 cursor-pointer hover:bg-background w-28 overflow-hidden">
+        <Button variant={"ghost"} className="relative dark:hover:bg-background group mx-auto mt-4 cursor-pointer hover:bg-background w-45 overflow-hidden">
           See More{" "}
           <ChevronDown className="absolute right-0 h-5 w-5 -translate-y-6   transition-all duration-300 group-hover:translate-y-0 opacity-0 group-hover:opacity-100" />
           <ChevronDown className="absolute right-0 h-5 w-5 translate-y-0 transition-all duration-300 group-hover:translate-y-6 group-hover:opacity-0" />
