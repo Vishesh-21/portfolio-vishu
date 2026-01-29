@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
+import Image from "next/image";
 
 export function ProjectsGrid({ projects }: { projects: ProjectData[] }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -42,14 +43,16 @@ export function ProjectsGrid({ projects }: { projects: ProjectData[] }) {
 
       {!isHome && (
         <div className="text-muted-foreground flex items-center justify-center p-10">
-          <Link
-            href={"https://github.com/Vishesh-21"}
-            target="_blank"
-            className=""
-          >
-            <Button variant={"ghost"} className="cursor-pointer">
-              <Github className="mr-1" />
-              <span>View More on GitHub</span>
+          <Link href={"https://github.com/Vishesh-21"} target="_blank">
+            <Button
+              variant={"ghost"}
+              className="flex cursor-pointer flex-col hover:bg-transparent dark:hover:bg-transparent"
+            >
+              <Image src="/github.png" alt="github" width={200} height={200} />
+              <div>
+                <Github className="mr-2 mb-1 inline-block" size={16} />
+                Explore more on GitHub
+              </div>
             </Button>
           </Link>
         </div>
