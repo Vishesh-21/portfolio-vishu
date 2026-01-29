@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
 // @ts-ignore
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NavBar } from "@/components/navbar/nav-bar";
 import { inter, poppins } from "@/lib/font";
 import { metadata } from "@/lib/metadata";
-import Footer from "@/components/footer/footer";
+import { ContactPage } from "./_components/contact/contact-page";
 
 export { metadata };
 
@@ -27,8 +26,7 @@ export default function RootLayout({
         >
           {/* navbar for the site */}
           <NavBar />
-          {/* main content */}
-          <main className="px-6 md:px-14">{children}</main>
+          {children}
         </ThemeProvider>
       </body>
     </html>

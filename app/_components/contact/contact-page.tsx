@@ -6,7 +6,7 @@ import { MotionSubHeading } from "@/components/motion-sub-heading";
 
 export const ContactPage = () => {
   return (
-    <Container >
+    <Container className="">
       {/* Heading  */}
       <MotionHeading as="h2">
         Get in <span className="text-muted-foreground">Touch</span>
