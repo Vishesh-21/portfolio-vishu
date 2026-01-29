@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 // @ts-ignore
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -27,12 +26,7 @@ export default function RootLayout({
         >
           {/* navbar for the site */}
           <NavBar />
-          {/* main content */}
-          <main className="px-6 md:px-14">
-            {children}
-            {/* footer for the site */}
-            <ContactPage />
-          </main>
+          {children}
         </ThemeProvider>
       </body>
     </html>
