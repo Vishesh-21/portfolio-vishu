@@ -60,7 +60,7 @@ function List({ lifeChangelog }: { lifeChangelog: ChangelogItem[] }) {
             </div>
           ))}
           {i !== lifeChangelog.length - 1 && (
-            <div className="bg-muted-foreground h-[0.7px] w-full rounded-full"></div>
+            <div className="bg-muted-foreground h-[1.3px] w-full rounded-full"></div>
           )}
         </div>
       ))}

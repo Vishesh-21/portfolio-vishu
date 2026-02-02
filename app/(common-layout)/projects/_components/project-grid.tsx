@@ -22,7 +22,7 @@ export function ProjectsGrid({ projects }: { projects: ProjectData[] }) {
     <div className="mt-8 grid md:grid-cols-2">
       {visibleProjects.map((project, index) => (
         <div
-          className="relative p-1"
+          className="relative p-2"
           key={`project-${project.title}-${index}`}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -31,7 +31,7 @@ export function ProjectsGrid({ projects }: { projects: ProjectData[] }) {
           {hoveredIndex === index && (
             <motion.span
               layoutId="project-pill"
-              className="absolute inset-0 -z-10 rounded-none bg-neutral-100/50 dark:bg-neutral-800/50"
+              className="absolute inset-0 -z-10 rounded-sm  bg-neutral-100/50 dark:bg-neutral-800/50"
               transition={{
                 type: "spring",
                 stiffness: 500,
