@@ -27,7 +27,7 @@ export const ProjectCard = ({ ...project }: ProjectData) => {
         },
       }}
       viewport={{ once: true }}
-      className="relative h-full px-6 py-6 shadow-none transition-all duration-200 hover:shadow-lg md:py-10"
+      className="relative h-full px-6 py-4 shadow-none transition-all duration-200 hover:shadow-lg md:py-10 rounded-none"
     >
       <CardContent {...project} />
       <MouseGlow x={x} y={y} />
