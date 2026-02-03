@@ -11,7 +11,7 @@ export const ContactPage = () => {
       <MotionHeading as="h2">
         Get in <span className="text-muted-foreground">Touch</span>
       </MotionHeading>
-      <MotionSubHeading>
+      <MotionSubHeading className="mt-2">
         Great products begin with simple chat. Let’s connect.
       </MotionSubHeading>
 
