@@ -1,8 +1,10 @@
-import React from "react";
+"use client";
+
 import { experience, ExperienceData } from "./experience-data";
-import { CircleCheck, Dot, Fan, Plane } from "lucide-react";
+import { Dot, Plane } from "lucide-react";
 import { MotionSubHeading } from "@/components/motion-sub-heading";
 import { MotionHeading } from "@/components/motion-heading";
+import { motion } from "motion/react";
 
 export const ExperienceInSights = () => {
   return (
@@ -22,9 +24,17 @@ function ExperienceCard({
 }: ExperienceData) {
   return (
     <div className="mt-4 flex gap-2">
-      <Plane className="text-primary fill-primary mt-1 h-5 w-5 shrink-0" />
-      <div className="flex flex-col gap-3 w-full">
-        <div className="flex justify-between md:flex-row flex-col">
+      <motion.span
+        initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.3, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <Plane className="text-primary fill-primary mt-1 h-5 w-5 shrink-0" />
+      </motion.span>
+
+      <div className="flex w-full flex-col gap-3">
+        <div className="flex flex-col justify-between md:flex-row">
           <div>
             <MotionHeading as="h5">{role}</MotionHeading>
             <MotionHeading
@@ -34,7 +44,7 @@ function ExperienceCard({
               {company}
             </MotionHeading>
           </div>
-          <MotionSubHeading className="text-sm italic mt-1">
+          <MotionSubHeading className="mt-1 text-sm italic">
             {period}
           </MotionSubHeading>
         </div>

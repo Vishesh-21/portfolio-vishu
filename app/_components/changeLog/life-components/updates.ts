@@ -1,14 +1,13 @@
-export interface ChangelogItem {
-  year: string | number;
-  items: ChangelogEntry[];
-}
-
-interface ChangelogEntry {
+export type ChangelogEntry = {
   title: string;
   description: string;
-}
+};
 
-export const lifeChangelog: ChangelogItem[] = [
+export type ChangelogSection = {
+  year: string | number;
+  items: ChangelogEntry[];
+};
+export const lifeChangelog: ChangelogSection[] = [
   {
     year: 2026,
     items: [
