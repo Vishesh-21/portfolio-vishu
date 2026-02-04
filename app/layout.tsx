@@ -5,6 +5,7 @@ import { NavBar } from "@/components/navbar/nav-bar";
 import { inter, poppins } from "@/lib/font";
 import { metadata } from "@/lib/metadata";
 import { ContactPage } from "./_components/contact/contact-page";
+import ScrollToTop from "@/components/scroll-to-top";
 
 export { metadata };
 
@@ -26,6 +27,7 @@ export default function RootLayout({
         >
           {/* navbar for the site */}
           <NavBar />
+          <ScrollToTop />
           {children}
         </ThemeProvider>
       </body>
