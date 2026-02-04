@@ -3,13 +3,12 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Github } from "lucide-react";
 import Image from "next/image";
 // @ts-ignore
 import { ProjectData } from "./constant";
 import { ProjectCard } from "./project-card";
+import { Link } from "next-view-transitions";
 
 export function ProjectsGrid({ projects }: { projects: ProjectData[] }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { SubHeading } from "../sub-heading";
@@ -8,6 +7,7 @@ import Container from "../container";
 import { MoveUpRight } from "lucide-react";
 import { useState } from "react";
 import { globalMotionVariants, globalViewPort } from "@/lib/animate-motion";
+import { Link } from "next-view-transitions";
 
 const footerLinks = [
   {

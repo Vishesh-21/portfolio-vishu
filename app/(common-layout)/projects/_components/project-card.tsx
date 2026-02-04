@@ -7,7 +7,7 @@ import { useMouseGlow } from "@/hooks/useMouseGlow";
 import Heading from "@/components/heading";
 import { SubHeading } from "@/components/sub-heading";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { ProjectData } from "./constant";
 
 export const ProjectCard = ({ ...project }: ProjectData) => {

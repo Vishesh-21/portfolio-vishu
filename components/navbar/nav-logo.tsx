@@ -2,9 +2,9 @@
 
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "motion/react";
 import { globalMotionVariants, globalViewPort } from "@/lib/animate-motion";
+import { Link } from "next-view-transitions";
 
 //nav logo component
 export const NavLogo = () => {

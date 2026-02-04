@@ -1,5 +1,5 @@
 import Container from "@/components/container";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 const PageNotFound = () => {
   return (
