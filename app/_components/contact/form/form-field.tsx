@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
+import { globalMotionVariants, globalViewPort } from "@/lib/animate-motion";
 
 interface FormFieldProps {
   field: {
@@ -24,10 +25,10 @@ export const FormField = ({ field, index }: FormFieldProps) => {
   return (
     <motion.div
       className="relative mt-8"
-      initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
+      variants={globalMotionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={globalViewPort}
     >
       {/* Floating Label */}
       <motion.label

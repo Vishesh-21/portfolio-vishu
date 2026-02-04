@@ -1,8 +1,6 @@
 import Container from "@/components/container";
 import { MotionHeading } from "@/components/motion-heading";
 import { MotionSubHeading } from "@/components/motion-sub-heading";
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { ProjectsGrid } from "./project-grid";
 import { projectsData } from "./constant";

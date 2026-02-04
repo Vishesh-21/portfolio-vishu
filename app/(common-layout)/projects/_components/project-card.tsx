@@ -15,9 +15,8 @@ export const ProjectCard = ({ ...project }: ProjectData) => {
   return (
     <AnimatedCard
       onMouseMove={handleMouseMove}
-      initial={{ y: 50, opacity: 0.8, filter: "blur(8px)" }}
+      initial={{ opacity: 0.8, filter: "blur(8px)" }}
       whileInView={{
-        y: 0,
         opacity: 1,
         filter: "blur(0px)",
         transition: {

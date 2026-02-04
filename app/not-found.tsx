@@ -1,5 +1,4 @@
 import Container from "@/components/container";
-import { MotionHeading } from "@/components/motion-heading";
 import Link from "next/link";
 
 const PageNotFound = () => {
