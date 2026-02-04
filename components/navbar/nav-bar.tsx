@@ -3,7 +3,6 @@ import { Home, FileBracesCorner, Github, Linkedin, Earth } from "lucide-react";
 import { ToggleModeButton } from "../toggle-theme";
 import { NavLinks } from "./nav-links";
 import { NavLogo } from "./nav-logo";
-
 import { motion } from "motion/react";
 import { globalMotionVariants, globalViewPort } from "@/lib/animate-motion";
 
