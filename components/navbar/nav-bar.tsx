@@ -26,7 +26,7 @@ export const NavBar = () => {
     },
     {
       title: "Blog",
-      href: "#blog",
+      href: "/blog",
       Icon: Earth,
     },
     {

@@ -25,11 +25,11 @@ export const ChangelogItem = ({ item }: Props) => {
       <div className="space-y-2">
         <MotionHeading
           as="h6"
-          className="text-foreground/95 text-md font-semibold"
+          className="text-foreground/95 text-md font-semibold text-shadow-none"
         >
           {item.title}
         </MotionHeading>
-        <MotionSubHeading className="text-muted-foreground text-[0.97rem]">
+        <MotionSubHeading className="text-muted-foreground text-[0.97rem] text-shadow-none">
           {item.description}
         </MotionSubHeading>
       </div>
