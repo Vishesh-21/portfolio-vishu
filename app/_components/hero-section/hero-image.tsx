@@ -16,11 +16,21 @@ export function HeroImage() {
       viewport={globalViewPort}
     >
       <motion.div
-        className="relative -top-2 -right-2 z-10 will-change-transform"
+        className="relative -top-2 -right-2 z-10 will-change-transform md:-right-4"
+        initial={{
+          scale: 0.8,
+          opacity: 0,
+          filter: "blur(10px)",
+        }}
+        animate={{
+          scale: 1,
+          opacity: 1,
+          filter: "blur(0px)",
+        }}
         whileHover={{
           rotateX: 9,
           rotateY: -8,
-          scale: 1.05,
+          scale: 1.02,
           z: 40,
         }}
         transition={{
@@ -36,7 +46,7 @@ export function HeroImage() {
           width={200}
           height={200}
           priority
-          className="h-24 w-24 rounded-full md:h-38 md:w-38"
+          className="h-24 w-24 rounded-full drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)] md:h-32 md:w-32"
         />
       </motion.div>
 
