@@ -3,8 +3,8 @@ import { Home, FileBracesCorner, Github, Linkedin, Earth } from "lucide-react";
 import { ToggleModeButton } from "../toggle-theme";
 import { NavLinks } from "./nav-links";
 import { NavLogo } from "./nav-logo";
-
 import { motion } from "motion/react";
+import { globalMotionVariants, globalViewPort } from "@/lib/animate-motion";
 
 export interface navItemsProps {
   title: string;
@@ -26,7 +26,7 @@ export const NavBar = () => {
     },
     {
       title: "Blog",
-      href: "#blog",
+      href: "/blog",
       Icon: Earth,
     },
     {
@@ -49,10 +49,10 @@ export const NavBar = () => {
 
         <motion.nav
           className="border-border bg-background/70 relative flex max-w-fit items-center gap-2 overflow-hidden rounded-full border p-1 shadow-lg"
-          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          variants={globalMotionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={globalViewPort}
         >
           {/* glow line  */}
           <div className="dark:via-foreground/40 absolute top-0 left-0 h-px w-1/2 bg-linear-to-r from-transparent to-transparent"></div>

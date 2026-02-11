@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { navItemsProps } from "./nav-bar";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
+import { Link } from "next-view-transitions";
 
 export const NavLinks = ({ navItems }: { navItems: navItemsProps[] }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -75,7 +75,7 @@ const NavItem = ({
       {isActive && (
         <motion.span
           layoutId="active-underline"
-          className="via-primary pointer-events-none absolute md:-bottom-1 -bottom-1.5 left-1/2 h-[0.1rem] w-full -translate-x-1/2 bg-linear-to-r from-transparent to-transparent"
+          className="via-primary pointer-events-none absolute -bottom-1.5 left-1/2 h-[0.1rem] w-full -translate-x-1/2 bg-linear-to-r from-transparent to-transparent md:-bottom-1"
           transition={{
             type: "spring",
             stiffness: 300,

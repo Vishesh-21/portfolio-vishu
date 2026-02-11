@@ -3,13 +3,12 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Github } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import Image from "next/image";
 // @ts-ignore
 import { ProjectData } from "./constant";
 import { ProjectCard } from "./project-card";
+import { Link } from "next-view-transitions";
 
 export function ProjectsGrid({ projects }: { projects: ProjectData[] }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -31,7 +30,7 @@ export function ProjectsGrid({ projects }: { projects: ProjectData[] }) {
           {hoveredIndex === index && (
             <motion.span
               layoutId="project-pill"
-              className="absolute inset-0 -z-10 rounded-sm  bg-neutral-100/50 dark:bg-neutral-800/50"
+              className="absolute inset-0 -z-10 rounded-sm bg-neutral-100/50 dark:bg-neutral-800/50"
               transition={{
                 type: "spring",
                 stiffness: 500,
@@ -43,18 +42,22 @@ export function ProjectsGrid({ projects }: { projects: ProjectData[] }) {
       ))}
 
       {!isHome && (
-        <div className="text-muted-foreground flex items-center justify-center p-10">
-          <Link href={"https://github.com/Vishesh-21"} target="_blank">
-            <Button
-              variant={"ghost"}
-              className="flex cursor-pointer flex-col hover:bg-transparent dark:hover:bg-transparent"
-            >
-              <Image src="/github.png" alt="github" width={200} height={200} />
-              <div>
-                <Github className="mr-2 mb-1 inline-block" size={16} />
-                Explore more on GitHub
-              </div>
-            </Button>
+        <div className="text-muted-foreground flex flex-col items-center justify-center gap-6 md:p-10 p-0 md:mt-0 mt-6">
+          <Image
+            src="/github.png"
+            alt="github"
+            width={200}
+            height={200}
+            className="h-24 w-24 md:block hidden"
+          />
+          <Link
+            href={"https://github.com/Vishesh-21"}
+            target="_blank"
+            className="hover:text-foreground group relative flex items-center gap-1"
+          >
+            Github{" "}
+            <ArrowUpRight className="rotate-45 transition-all duration-200 group-hover:rotate-0 h-4 w-4" />
+            <span className="absolute inset-0 top-7 hidden h-px bg-linear-to-r from-transparent via-primary to-transparent dark:inline"></span>
           </Link>
         </div>
       )}

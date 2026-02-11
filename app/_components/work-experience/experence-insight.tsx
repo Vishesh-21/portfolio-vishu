@@ -5,6 +5,7 @@ import { Dot, Plane } from "lucide-react";
 import { MotionSubHeading } from "@/components/motion-sub-heading";
 import { MotionHeading } from "@/components/motion-heading";
 import { motion } from "motion/react";
+import { globalMotionVariants, globalViewPort } from "@/lib/animate-motion";
 
 export const ExperienceInSights = () => {
   return (
@@ -25,10 +26,10 @@ function ExperienceCard({
   return (
     <div className="mt-4 flex gap-2">
       <motion.span
-        initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.3, delay: 0.2 }}
-        viewport={{ once: true }}
+        variants={globalMotionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={globalViewPort}
       >
         <Plane className="text-primary fill-primary mt-1 h-5 w-5 shrink-0" />
       </motion.span>

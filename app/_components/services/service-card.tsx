@@ -5,6 +5,7 @@ import { AnimatedCard } from "@/components/animated-border";
 import { ServicesData } from "./services-data";
 import Heading from "@/components/heading";
 import { SubHeading } from "@/components/sub-heading";
+import { GlowBlow } from "@/components/glow-blow";
 
 export function ServiceCard({
   title,
@@ -12,24 +13,9 @@ export function ServiceCard({
   description,
   index,
 }: ServicesData & { index: number }) {
-  const { x, y, handleMouseMove } = useMouseGlow();
-
   return (
     <AnimatedCard
-      onMouseMove={handleMouseMove}
-      initial={{ y: 50, opacity: 0, filter: "blur(8px)" }}
-      whileInView={{
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        transition: {
-          duration: 0.2,
-          delay: index * 0.05,
-          ease: "easeInOut",
-        },
-      }}
-      viewport={{ once: true }}
-      className={`md:py-14 py-8 px-6 shadow-md ${
+      className={`relative px-6 py-8 shadow-md md:py-14 ${
         index === 2 || index === 3 ? "md:col-span-3" : "col-span-2"
       } col-span-2`}
     >
@@ -39,8 +25,6 @@ export function ServiceCard({
         {title}
       </Heading>
       <SubHeading className="text-[0.9rem]">{description}</SubHeading>
-
-      <MouseGlow x={x} y={y} />
     </AnimatedCard>
   );
 }

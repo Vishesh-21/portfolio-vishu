@@ -1,12 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { SubHeading } from "../sub-heading";
 import Container from "../container";
 import { MoveUpRight } from "lucide-react";
 import { useState } from "react";
+import { globalMotionVariants, globalViewPort } from "@/lib/animate-motion";
+import { Link } from "next-view-transitions";
 
 const footerLinks = [
   {
@@ -25,15 +26,15 @@ const footerLinks = [
 
 export default function Footer({ className }: { className?: string }) {
   return (
-    <Container className="md:mt-0 mt-0">
+    <Container className="mt-0 md:mt-0">
       <footer
         className={cn("bg-background/60 relative backdrop-blur-xl", className)}
       >
         <motion.div
-          initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          variants={globalMotionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={globalViewPort}
           className="pb-8"
         >
           {/* Divider */}
@@ -51,7 +52,7 @@ function TopSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <ul className="text-muted-foreground relative mx-auto flex  items-center rounded-full">
+    <ul className="text-muted-foreground relative mx-auto flex items-center rounded-full">
       {footerLinks.map((link, index) => (
         <li key={index}>
           <LinkItem
@@ -108,12 +109,12 @@ function LinkItem({
 // function bottom part of footer
 function BottomPart() {
   return (
-    <div className="text-muted-foreground flex flex-col-reverse items-center justify-center md:justify-between text-sm md:flex-row gap-2">
-      <div className="flex gap-3 flex-col flex-1 ">
+    <div className="text-muted-foreground flex flex-col-reverse items-center justify-center gap-2 text-sm md:flex-row md:justify-between">
+      <div className="flex flex-1 flex-col gap-3">
         <SubHeading className="tracking-normal">
           Built with Next.js · Tailwind · Motion
         </SubHeading>
-        <SubHeading className="tracking-normal md:mx-0 mx-auto">
+        <SubHeading className="mx-auto tracking-normal md:mx-0">
           &copy; {new Date().getFullYear()} Vishesh Verma
         </SubHeading>
       </div>

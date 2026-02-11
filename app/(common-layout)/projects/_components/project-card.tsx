@@ -7,7 +7,7 @@ import { useMouseGlow } from "@/hooks/useMouseGlow";
 import Heading from "@/components/heading";
 import { SubHeading } from "@/components/sub-heading";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { ProjectData } from "./constant";
 
 export const ProjectCard = ({ ...project }: ProjectData) => {
@@ -15,9 +15,8 @@ export const ProjectCard = ({ ...project }: ProjectData) => {
   return (
     <AnimatedCard
       onMouseMove={handleMouseMove}
-      initial={{ y: 50, opacity: 0.8, filter: "blur(8px)" }}
+      initial={{ opacity: 0.8, filter: "blur(8px)" }}
       whileInView={{
-        y: 0,
         opacity: 1,
         filter: "blur(0px)",
         transition: {

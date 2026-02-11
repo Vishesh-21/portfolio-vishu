@@ -1,6 +1,5 @@
 import Container from "@/components/container";
-import { MotionHeading } from "@/components/motion-heading";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 const PageNotFound = () => {
   return (

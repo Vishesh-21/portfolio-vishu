@@ -2,19 +2,20 @@ import { MotionHeading } from "@/components/motion-heading";
 import { MotionSubHeading } from "@/components/motion-sub-heading";
 import { getPublicRepoCount } from "@/lib/github";
 import { CornerRightUpIcon } from "lucide-react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
+import AnimatedCounter from "./animate-counter";
 
 export default async function GitHubStats() {
   const repoCount = await getPublicRepoCount();
-  const experience = "+1";
+  const experience = 1;
 
   return (
-    <section className="px-4 md:mt-20 mt-18">
+    <section className="mt-18 px-4 md:mt-20">
       <div className="flex items-center gap-10">
         {/* Years of experience  */}
         <div>
           <MotionHeading as="h1" className="tracking-tighter">
-            {experience}
+            +<AnimatedCounter value={experience} duration={100}/>
           </MotionHeading>
           <MotionSubHeading className="text-sm tracking-normal md:mb-1">
             Years of Experience
@@ -24,7 +25,7 @@ export default async function GitHubStats() {
         {/* Repositories  */}
         <div>
           <MotionHeading as="h1" className="tracking-tighter">
-            {repoCount}+
+            <AnimatedCounter value={repoCount} />+
           </MotionHeading>
           <MotionSubHeading className="text-sm tracking-normal md:mb-1">
             Public Repositories
@@ -32,7 +33,7 @@ export default async function GitHubStats() {
         </div>
 
         <div>
-          <MotionSubHeading className="hover:text-foreground duration-300 font-normal transition-all">
+          <MotionSubHeading className="hover:text-foreground font-normal transition-all duration-300">
             <Link href={"https://github.com/Vishesh-21"} target="blank">
               Check Projects <CornerRightUpIcon className="inline" />
             </Link>

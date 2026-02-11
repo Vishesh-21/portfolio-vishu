@@ -3,23 +3,34 @@
 import { GlowLine } from "@/components/glow-line";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { globalMotionVariants, globalViewPort } from "@/lib/animate-motion";
 
 export function HeroImage() {
   return (
     <motion.div
       className="relative w-45 px-1 py-4 md:w-[80%] md:px-10 md:py-6"
       style={{ perspective: 1000 }} // critical for 3D depth
-      initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      variants={globalMotionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={globalViewPort}
     >
       <motion.div
-        className="relative -top-2 -right-2 z-10 will-change-transform"
+        className="relative -top-2 -right-2 z-10 will-change-transform md:-right-4"
+        initial={{
+          scale: 0.8,
+          opacity: 0,
+          filter: "blur(10px)",
+        }}
+        animate={{
+          scale: 1,
+          opacity: 1,
+          filter: "blur(0px)",
+        }}
         whileHover={{
           rotateX: 9,
           rotateY: -8,
-          scale: 1.05,
+          scale: 1.02,
           z: 40,
         }}
         transition={{
@@ -35,7 +46,7 @@ export function HeroImage() {
           width={200}
           height={200}
           priority
-          className="h-24 w-24 rounded-full md:h-42 md:w-42"
+          className="h-24 w-24 rounded-full drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)] md:h-32 md:w-32"
         />
       </motion.div>
 
@@ -54,5 +65,3 @@ function LineEffect() {
     </>
   );
 }
-
-
