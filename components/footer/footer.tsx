@@ -109,16 +109,30 @@ function LinkItem({
 // function bottom part of footer
 function BottomPart() {
   return (
-    <div className="text-muted-foreground flex flex-col-reverse items-center justify-center gap-2 text-sm md:flex-row md:justify-between">
-      <div className="flex flex-1 flex-col gap-3">
-        <SubHeading className="tracking-normal">
-          Built with Next.js · Tailwind · Motion
-        </SubHeading>
-        <SubHeading className="mx-auto tracking-normal md:mx-0">
-          &copy; {new Date().getFullYear()} Vishesh Verma
-        </SubHeading>
+    <>
+      <div className="text-muted-foreground flex flex-col-reverse items-center justify-center gap-2 text-sm md:flex-row md:justify-between">
+        <div className="flex flex-1 flex-col gap-3">
+          <SubHeading className="tracking-normal">
+            Built with Next.js · Tailwind · Motion
+          </SubHeading>
+        </div>
+        <TopSection />
       </div>
-      <TopSection />
+      <FooterIntro />
+
+      <SubHeading className="text-muted-foreground/30 mx-auto text-center text-xs tracking-[0.2rem] md:mx-0 uppercase">
+        &copy; {new Date().getFullYear()} | Made by Vishesh Verma
+      </SubHeading>
+    </>
+  );
+}
+
+function FooterIntro() {
+  return (
+    <div className="py-4 text-center select-none">
+      <h1 className="text-muted-foreground/20 text-[6rem] leading-20 font-bold tracking-wider uppercase md:text-[15rem] md:leading-45">
+        Vishu
+      </h1>
     </div>
   );
 }
