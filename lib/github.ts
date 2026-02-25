@@ -1,21 +1,27 @@
 const GITHUB_API = "https://api.github.com";
 
-const headers = {
-  Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-};
-
-//get public repo count
 export async function getPublicRepoCount() {
-  const res = await fetch(
-    `${GITHUB_API}/users/${process.env.GITHUB_USERNAME}`,
-    {
-      headers,
-      next: { revalidate: 3600 },
-    },
-  );
+  if (!process.env.GITHUB_USERNAME) return 0;
 
-  if (!res.ok) throw new Error("Failed to fetch user");
+  try {
+    const res = await fetch(
+      `${GITHUB_API}/users/${process.env.GITHUB_USERNAME}`,
+      {
+        headers: process.env.GITHUB_TOKEN
+          ? {
+              Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+            }
+          : {},
+        next: { revalidate: 3600 },
+      },
+    );
 
-  const data = await res.json();
-  return data.public_repos as number;
+    if (!res.ok) return 0;
+
+    const data = await res.json();
+    return data.public_repos ?? 0;
+  } catch (error) {
+    console.error("Error fetching GitHub repo count:", error);
+    return 0;
+  }
 }
