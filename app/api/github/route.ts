@@ -15,7 +15,7 @@ export async function GET() {
     const headers: HeadersInit = {};
 
     if (token) {
-      headers.Authorization = `Bearer ${token}`;
+      headers.Authorization = `token ${token}`;
     }
 
     const res = await fetch(`${GITHUB_API}/users/${username}`, {
