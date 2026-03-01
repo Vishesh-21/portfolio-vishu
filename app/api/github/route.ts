@@ -5,22 +5,28 @@ export async function GET() {
     const username = process.env.GITHUB_USERNAME;
     const token = process.env.GITHUB_TOKEN;
 
+    console.log("Fetching GitHub repo count for user:", username);
+    console.log("Using token:", !!token);
+
     if (!username) {
       return Response.json({ repoCount: 0 });
     }
 
+    const headers: HeadersInit = {};
+
+    if (token) {
+      headers.Authorization = `Bearer ${token}`;
+    }
+
     const res = await fetch(`${GITHUB_API}/users/${username}`, {
-      headers: token
-        ? {
-            Authorization: `Bearer ${token}`,
-          }
-        : {},
+      headers,
       next: { revalidate: 3600 },
     });
 
     if (!res.ok) {
       return Response.json({
         repoCount: 0,
+        res: res,
         error: `GitHub API error: ${res.status} ${res.statusText}`,
       });
     }
