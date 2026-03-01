@@ -1,7 +1,5 @@
 const GITHUB_API = "https://api.github.com";
 
-export const revalidate = 3600; // cache for 1 hour
-
 export async function GET() {
   try {
     const username = process.env.GITHUB_USERNAME;
@@ -21,7 +19,10 @@ export async function GET() {
     });
 
     if (!res.ok) {
-      return Response.json({ repoCount: 0 });
+      return Response.json({
+        repoCount: 0,
+        error: `GitHub API error: ${res.status} ${res.statusText}`,
+      });
     }
 
     const data = await res.json();
