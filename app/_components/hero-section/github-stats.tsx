@@ -1,9 +1,9 @@
 import { MotionHeading } from "@/components/motion-heading";
 import { MotionSubHeading } from "@/components/motion-sub-heading";
-import { getPublicRepoCount } from "@/lib/github";
 import { CornerRightUpIcon } from "lucide-react";
 import { Link } from "next-view-transitions";
 import AnimatedCounter from "./animate-counter";
+import { getPublicRepoCount } from "@/lib/github";
 
 export default async function GitHubStats() {
   const repoCount = await getPublicRepoCount();

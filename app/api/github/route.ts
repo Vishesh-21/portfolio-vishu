@@ -1,0 +1,38 @@
+const GITHUB_API = "https://api.github.com";
+
+export const revalidate = 3600; // cache for 1 hour
+
+export async function GET() {
+  try {
+    const username = process.env.GITHUB_USERNAME;
+    const token = process.env.GITHUB_TOKEN;
+
+    if (!username) {
+      return Response.json({ repoCount: 0 });
+    }
+
+    const res = await fetch(`${GITHUB_API}/users/${username}`, {
+      headers: token
+        ? {
+            Authorization: `Bearer ${token}`,
+          }
+        : {},
+      next: { revalidate: 3600 },
+    });
+
+    if (!res.ok) {
+      return Response.json({ repoCount: 0 });
+    }
+
+    const data = await res.json();
+
+    return Response.json({
+      repoCount: data.public_repos ?? 0,
+    });
+  } catch (error) {
+    return Response.json({
+      repoCount: 0,
+      error: error instanceof Error ? error.message : "Unknown error",
+    });
+  }
+}
