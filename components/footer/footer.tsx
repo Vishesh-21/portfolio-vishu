@@ -120,18 +120,46 @@ function BottomPart() {
       </div>
       <FooterIntro />
 
-      <SubHeading className="text-muted-foreground/30 mx-auto text-center text-xs tracking-[0.2rem] md:mx-0 uppercase">
-        &copy; {new Date().getFullYear()} | Made by Vishesh Verma
+      <SubHeading className="text-muted-foreground/30 mx-auto text-center text-xs tracking-[0.1rem] uppercase md:mx-0">
+        &copy; {new Date().getFullYear()} | Logic first, code follows.
       </SubHeading>
     </>
   );
 }
 
 function FooterIntro() {
+  const name = "Vishesh";
+  const characters = name.split("");
+
   return (
-    <div className="py-4 text-center select-none">
-      <h1 className="text-muted-foreground/20 text-[6rem] leading-20 font-bold tracking-wider uppercase md:text-[15rem] md:leading-45">
-        Vishu
+    <div className="py-4 text-center  select-none overflow-hidden">
+      <h1 className="text-muted-foreground/20 flex justify-center text-[5rem] leading-15 font-bold md:tracking-tight tracking-tighter uppercase md:text-[12rem] md:leading-35">
+        {characters.map((char, index) => (
+          <motion.span
+            key={index}
+            className="inline-block cursor-pointer"
+            /* Initial state: Zero rotation and muted color.
+               This is where the character returns on mouse leave.
+            */
+            initial={{ rotate: 0, color: "rgb(var(--muted-foreground) / 0.2)" }}
+            animate={{ rotate: 0, color: "rgb(var(--muted-foreground) / 0.2)" }}
+            /* The 'bottom' origin creates the needle/pendulum anchor point */
+            style={{ transformOrigin: "bottom" }}
+            
+            whileHover={{
+              /* Clock-like swing: Backwards (-20deg) then Forwards (20deg) */
+              rotate: [0, -10, 10, 0],
+              /* Change to primary color during the hover state */
+              color: "var(--primary)",
+              transition: {
+                duration: 0.5,
+                ease: "easeInOut",
+              },
+            }}
+          >
+            {char}
+          </motion.span>
+        ))}
       </h1>
     </div>
   );

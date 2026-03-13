@@ -5,9 +5,6 @@ export async function GET() {
     const username = process.env.GITHUB_USERNAME;
     const token = process.env.GITHUB_TOKEN;
 
-    console.log("Fetching GitHub repo count for user:", username);
-    console.log("Using token:", !!token);
-
     if (!username) {
       return Response.json({ repoCount: 0 });
     }
@@ -15,7 +12,7 @@ export async function GET() {
     const headers: HeadersInit = {};
 
     if (token) {
-      headers.Authorization = `token ${token}`;
+      headers.Authorization = `Bearer ${token}`;
     }
 
     const res = await fetch(`${GITHUB_API}/users/${username}`, {
@@ -26,13 +23,12 @@ export async function GET() {
     if (!res.ok) {
       return Response.json({
         repoCount: 0,
-        res: res,
-        error: `GitHub API error: ${res.status} ${res.statusText}`,
+        error: `GitHub API error: ${res.status}`,
       });
     }
 
     const data = await res.json();
-
+    console.log(data);
     return Response.json({
       repoCount: data.public_repos ?? 0,
     });
