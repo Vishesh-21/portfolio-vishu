@@ -6,6 +6,7 @@ import { inter, poppins } from "@/lib/font";
 import { metadata } from "@/lib/metadata";
 import ScrollToTop from "@/components/scroll-to-top";
 import { ViewTransitions } from "next-view-transitions";
+import SmoothScroll from "@/components/smooth-scroll";
 
 export { metadata };
 
@@ -20,7 +21,8 @@ export default function RootLayout({
         <body
           className={`${inter.variable} ${poppins.variable} mx-auto max-w-4xl antialiased`}
         >
-          <ThemeProvider
+         <SmoothScroll>
+           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
@@ -31,6 +33,7 @@ export default function RootLayout({
             <ScrollToTop />
             {children}
           </ThemeProvider>
+         </SmoothScroll>
         </body>
       </html>
     </ViewTransitions>
